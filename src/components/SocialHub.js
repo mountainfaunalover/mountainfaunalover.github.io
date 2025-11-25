@@ -10,7 +10,7 @@ const SOCIAL_CONTENT = [
         platform: "youtube",
         title: "Il BRAMITO potente del cervo maschio",
         image: "https://img.youtube.com/vi/yH9cArzx4n8/maxresdefault.jpg",
-        views: "15k visualizzazioni",
+        views: "Un video da non credere...",
         link: "https://youtu.be/yH9cArzx4n8"
     },
     {
@@ -18,16 +18,16 @@ const SOCIAL_CONTENT = [
         platform: "youtube",
         title: "Defender 90: Offroad al Limite",
         image: "https://img.youtube.com/vi/wQrx2422wD8/maxresdefault.jpg",
-        views: "Nuovo Video",
+        views: "Test Land Rover Defender 90 HSE 2025 ",
         link: "https://youtu.be/wQrx2422wD8"
     },
     {
         id: 3,
-        platform: "tiktok",
-        title: "Incontri ravvicinati nel bosco",
-        image: "/hero-bg.png",
-        views: "50k views",
-        link: "https://tiktok.com"
+        platform: "youtube",
+        title: "Epica Avventura a Passo Cercen",
+        image: "https://img.youtube.com/vi/bn1cIlhqL74/maxresdefault.jpg",
+        views: "Giro ad Anello in Ebike",
+        link: "https://youtu.be/bn1cIlhqL74"
     }
 ];
 
