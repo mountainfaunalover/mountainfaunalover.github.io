@@ -14,10 +14,10 @@ export default function NotFound() {
             <div className={styles.content}>
                 <div className={styles.imageWrapper}>
                     <Image
-                        src="/images/branding/deer-silhouette.png"
-                        alt="Silhouette di un cervo maschio maestoso"
-                        width={400}
-                        height={400}
+                        src="/images/404-deer.png"
+                        alt="Primo piano di un cervo maschio maestoso"
+                        width={500}
+                        height={500}
                         className={styles.deerImage}
                         priority
                     />

@@ -7,6 +7,6 @@ export default function robots() {
             allow: "/",
             disallow: "/private/",
         },
-        sitemap: "https://mountainfaunalover.com/sitemap.xml",
+        sitemap: "https://mountainfaunalover.github.io/sitemap.xml",
     };
 }
