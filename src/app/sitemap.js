@@ -13,6 +13,7 @@ export default function sitemap() {
         "/partners",
         "/blog",
         "/faq",
+        "/avvistamenti-fauna-val-di-rabbi",
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),

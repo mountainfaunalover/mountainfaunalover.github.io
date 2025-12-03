@@ -40,26 +40,26 @@ export default async function BlogPost({ params }) {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": post.title,
-        "image": `https://mountainfaunalover.com${post.image}`,
+        "image": `https://mountainfaunalover.github.io${post.image}`,
         "datePublished": post.date,
         "dateModified": post.date,
         "author": {
             "@type": "Person",
             "name": "Simone Mattioli",
-            "url": "https://mountainfaunalover.com/founder"
+            "url": "https://mountainfaunalover.github.io/founder"
         },
         "publisher": {
             "@type": "Organization",
             "name": "Mountain & Fauna Lover",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://mountainfaunalover.com/images/branding/logo.jpg"
+                "url": "https://mountainfaunalover.github.io/images/branding/logo.jpg"
             }
         },
         "description": post.excerpt,
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": shareUrl
+            "@id": shareUrl.replace('mountainfaunalover.com', 'mountainfaunalover.github.io')
         }
     };
 

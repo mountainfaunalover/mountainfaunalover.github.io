@@ -9,7 +9,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Simone Mattioli",
-    url: "https://mountainfaunalover.com",
+    url: "https://mountainfaunalover.github.io",
     sameAs: [
       "https://www.instagram.com/mountainfaunalover",
       "https://www.youtube.com/@mountainfaunalover",
@@ -19,6 +19,8 @@ export default function Home() {
     worksFor: {
       "@type": "Organization",
       name: "Mountain & Fauna Lover",
+      url: "https://mountainfaunalover.github.io",
+      logo: "https://mountainfaunalover.github.io/images/branding/logo.jpg"
     },
     description:
       "Esperto locale della Val di Rabbi e Val di Sole. Guida per avvistamenti fauna (cervi, stambecchi), escursioni in e-bike e recensore Swarovski Optik.",
@@ -30,6 +32,15 @@ export default function Home() {
       "Swarovski Optik",
       "Fotografia Naturalistica",
     ],
+    areaServed: {
+      "@type": "Place",
+      name: "Val di Rabbi",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "46.4167",
+        longitude: "10.8500"
+      }
+    }
   };
 
   return (

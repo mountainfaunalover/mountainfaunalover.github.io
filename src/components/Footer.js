@@ -22,6 +22,11 @@ export default function Footer() {
                         </div>
                         <span className={styles.brandName}>Mountain & Fauna Lover</span>
                         <p className={styles.tagline}>Esplorando la natura selvaggia, un passo alla volta.</p>
+                        <div style={{ marginTop: '1rem' }}>
+                            <Link href="/avvistamenti-fauna-val-di-rabbi" style={{ color: '#38bdf8', fontSize: '0.9rem', textDecoration: 'none' }}>
+                                🦌 Avvistamenti Fauna Val di Rabbi
+                            </Link>
+                        </div>
                     </div>
 
 

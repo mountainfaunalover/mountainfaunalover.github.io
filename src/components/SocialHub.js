@@ -104,9 +104,26 @@ export default function SocialHub() {
         ? SOCIAL_CONTENT
         : SOCIAL_CONTENT.filter(item => item.platform === activeFilter);
 
+    const videoSchema = SOCIAL_CONTENT
+        .filter(item => item.platform === "youtube")
+        .map(item => ({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": item.title,
+            "description": item.views || item.title,
+            "thumbnailUrl": [item.image],
+            "uploadDate": new Date().toISOString(), // Fallback as we don't have real date
+            "contentUrl": item.link,
+            "embedUrl": item.link.replace("youtu.be/", "www.youtube.com/embed/")
+        }));
+
     return (
         <section id="social-hub" className={styles.section}>
             <div className={styles.container}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+                />
                 <div className={styles.header}>
                     <h2 className={styles.title}>Le Mie Avventure</h2>
                     <p className={styles.subtitle}>Segui le mie esplorazioni su tutti i canali social</p>
