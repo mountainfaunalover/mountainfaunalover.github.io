@@ -41,6 +41,10 @@ export default function Footer() {
             </div>
 
             <div className={styles.container}>
+                <div className={styles.legalLinks} style={{ marginBottom: '1rem', fontSize: '0.9rem' }}>
+                    <Link href="/privacy-policy" style={{ color: '#94a3b8', marginRight: '1rem', textDecoration: 'none' }}>Privacy Policy</Link>
+                    <Link href="/cookie-policy" style={{ color: '#94a3b8', textDecoration: 'none' }}>Cookie Policy</Link>
+                </div>
                 <p className={styles.copyright}>
                     &copy; {currentYear} Mountain & Fauna Lover. Tutti i diritti riservati.
                 </p>
