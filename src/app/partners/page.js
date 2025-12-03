@@ -25,7 +25,7 @@ const PARTNERS = [
         name: "Euromix Motors Trento",
         description: "Sono cliente Euromix Motors, dove ho acquistato il mio Defender 90. Questa relazione mi permette di partecipare e raccontarvi eventi privati esclusivi e raduni riservati, vivendo appieno lo spirito Land Rover insieme a una community di appassionati.",
         website: "https://www.euromixmotors.it",
-        logo: "/images/partners/euromix.jpg"
+        logo: "/images/partners/euromix.png"
     }
 ];
 

@@ -25,6 +25,43 @@
     font-size: 1.125rem;
 }
 
+/* Filter Styles */
+.filterContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filterButton {
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.filterButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.activeFilter {
+    background: var(--color-accent-green);
+    color: white;
+    border-color: var(--color-accent-green);
+}
+
+.activeFilter:hover {
+    background: var(--color-accent-green);
+    opacity: 0.9;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -51,6 +88,7 @@
     transition: all 0.3s ease;
     aspect-ratio: 16/9;
     cursor: pointer;
+    display: block; /* Ensure anchor tag behaves like a block */
 }
 
 .card:hover {

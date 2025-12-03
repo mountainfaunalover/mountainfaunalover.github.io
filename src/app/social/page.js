@@ -1,56 +1,7 @@
-import Image from "next/image";
 import { Youtube, Instagram, Video, Eye } from "lucide-react";
 import { getSocialStats } from "@/lib/social-stats";
 import SocialStorySection from "@/components/SocialStorySection";
 import styles from "./page.module.css";
-
-const CONTENT_FEED = [
-    {
-        id: 1,
-        platform: "youtube",
-        title: "Il BRAMITO potente del cervo maschio - Documentario Completo",
-        image: "/images/home/background.jpg",
-        views: "15k visualizzazioni",
-        link: "https://youtube.com",
-        type: "landscape"
-    },
-    {
-        id: 2,
-        platform: "tiktok",
-        title: "Dietro le quinte: Appostamento all'alba",
-        image: "/images/home/background.jpg",
-        views: "50k views",
-        link: "https://tiktok.com",
-        type: "portrait"
-    },
-    {
-        id: 3,
-        platform: "instagram",
-        title: "La magia della prima neve",
-        image: "/images/home/background.jpg",
-        views: "2.5k likes",
-        link: "https://instagram.com",
-        type: "portrait"
-    },
-    {
-        id: 4,
-        platform: "youtube",
-        title: "Test Attrezzatura: Swarovski NL Pure",
-        image: "/images/home/background.jpg",
-        views: "8k visualizzazioni",
-        link: "https://youtube.com",
-        type: "landscape"
-    },
-    {
-        id: 5,
-        platform: "tiktok",
-        title: "Incontro ravvicinato con una volpe",
-        image: "/images/home/background.jpg",
-        views: "120k views",
-        link: "https://tiktok.com",
-        type: "portrait"
-    }
-];
 
 export const metadata = {
     title: "Social Media Hub | Mountain & Fauna Lover",
@@ -67,15 +18,6 @@ export default async function SocialPage() {
         { label: "TikTok Followers", value: stats.tiktok.followers, icon: <Video size={24} /> },
     ];
 
-    const getIcon = (platform) => {
-        switch (platform) {
-            case "youtube": return <Youtube size={20} />;
-            case "instagram": return <Instagram size={20} />;
-            case "tiktok": return <Video size={20} />;
-            default: return null;
-        }
-    };
-
     return (
         <main className={styles.container}>
             <header className={styles.header}>
@@ -88,7 +30,7 @@ export default async function SocialPage() {
                     {SOCIAL_STATS.map((stat, index) => (
                         <div key={index} className={styles.statItem}>
                             <span className={styles.statValue}>{stat.value}</span>
-                            <span className={styles.statLabel} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                            <span className={styles.statLabel}>
                                 {stat.icon} {stat.label}
                             </span>
                         </div>
@@ -98,31 +40,32 @@ export default async function SocialPage() {
 
             <SocialStorySection />
 
-            <div className={styles.grid}>
-                {CONTENT_FEED.map((item) => (
-                    <a
-                        key={item.id}
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.card} ${item.type === 'landscape' ? styles.landscape : ''}`}
-                    >
-                        <div className={styles.platformIcon}>
-                            {getIcon(item.platform)}
-                        </div>
-                        <Image
-                            src={item.image}
-                            alt={item.title}
-                            fill
-                            className={styles.image}
-                        />
-                        <div className={styles.overlay}>
-                            <h3 className={styles.cardTitle}>{item.title}</h3>
-                            <span className={styles.cardMeta}>{item.views}</span>
-                        </div>
+            <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>Seguimi sui Social</h2>
+                <div className={styles.grid}>
+                    <a href="https://www.youtube.com/@MountainFaunaLover" target="_blank" rel="noopener noreferrer" className={styles.card}>
+                        <Youtube size={40} className={styles.cardIcon} />
+                        <h3 className={styles.cardTitle}>YouTube</h3>
+                        <p className={styles.cardText}>
+                            Documentari, test attrezzatura e avventure lunghe. Iscriviti per non perdere i nuovi video!
+                        </p>
                     </a>
-                ))}
-            </div>
+                    <a href="https://www.instagram.com/mountain_fauna_lover/" target="_blank" rel="noopener noreferrer" className={styles.card}>
+                        <Instagram size={40} className={styles.cardIcon} />
+                        <h3 className={styles.cardTitle}>Instagram</h3>
+                        <p className={styles.cardText}>
+                            Foto spettacolari, storie giornaliere e dietro le quinte delle mie uscite.
+                        </p>
+                    </a>
+                    <a href="https://www.tiktok.com/@mountain_fauna_lover" target="_blank" rel="noopener noreferrer" className={styles.card}>
+                        <Video size={40} className={styles.cardIcon} />
+                        <h3 className={styles.cardTitle}>TikTok</h3>
+                        <p className={styles.cardText}>
+                            Video brevi, curiosità e i momenti più emozionanti in formato verticale.
+                        </p>
+                    </a>
+                </div>
+            </section>
         </main>
     );
 }

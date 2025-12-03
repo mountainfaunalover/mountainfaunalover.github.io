@@ -1,25 +1,30 @@
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 8rem 1.5rem 4rem;
 }
 
 .header {
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     color: var(--color-foreground);
+    background: linear-gradient(to right, #fff, #a5f3fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 1.25rem;
-    max-width: 600px;
-    margin: 0 auto;
+    color: var(--color-accent-green);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .stats {
@@ -27,6 +32,7 @@
     justify-content: center;
     gap: 3rem;
     margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 
 .statItem {
@@ -45,86 +51,81 @@
     color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.section {
+    margin-bottom: 4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    padding: 3rem;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
 .card {
-    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
     border-radius: 1rem;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
-    aspect-ratio: 9/16;
-    /* Vertical video format */
-}
-
-.card.landscape {
-    aspect-ratio: 16/9;
-    grid-column: span 2;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid transparent;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent-green);
 }
 
-.image {
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.card:hover .image {
-    transform: scale(1.05);
-}
-
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 1.5rem;
-}
-
-.platformIcon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
-    padding: 0.5rem;
-    border-radius: 50%;
-    color: white;
-    z-index: 10;
+.cardIcon {
+    margin-bottom: 1rem;
+    color: var(--color-accent-green);
 }
 
 .cardTitle {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    color: white;
     margin-bottom: 0.5rem;
-    line-height: 1.3;
 }
 
-.cardMeta {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
+.cardText {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 768px) {
-    .card.landscape {
-        grid-column: span 1;
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 2rem;
     }
 
     .stats {
         gap: 1.5rem;
+        flex-wrap: wrap;
     }
 }
