@@ -77,6 +77,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    align-items: start;
+    /* Prevent cards from stretching to fill row height */
 }
 
 .card {
@@ -91,6 +93,10 @@
     align-items: center;
     text-align: center;
     border: 1px solid transparent;
+    height: auto;
+    /* Force auto height */
+    aspect-ratio: auto;
+    /* Override any potential cached aspect-ratio */
 }
 
 .card:hover {
